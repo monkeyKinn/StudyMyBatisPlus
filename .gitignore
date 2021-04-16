@@ -1,0 +1,22 @@
+/.metadata/
+*.prefs
+*.class
+*.MF
+logs
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+MyBatisPlus/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
