@@ -2,8 +2,10 @@ package com.jsc.mybatisplus;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.jsc.mybatisplus.entity.DuoBiaoVo;
 import com.jsc.mybatisplus.entity.User;
 import com.jsc.mybatisplus.service.UserService;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,5 +68,15 @@ public class ServiceTest {
         // 直接删除
         boolean update = userService.lambdaUpdate().eq(User::getName, "xx").remove();
         System.out.println(update?"success":"fail");
+    }
+
+    @Test
+    public void duoBiao(){
+        DuoBiaoVo duoBiaoVo = userService.selectBossById(1383048652618551298L);
+        Assert.assertEquals("小金",duoBiaoVo.getUname());
+        System.out.println(1);
+        System.out.println(duoBiaoVo.getName());
+        System.out.println(duoBiaoVo.getUname());
+        System.out.println(duoBiaoVo);
     }
 }

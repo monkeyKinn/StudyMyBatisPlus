@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.jsc.mybatisplus.entity.DuoBiaoVo;
 import com.jsc.mybatisplus.entity.User;
 import org.apache.ibatis.annotations.Param;
 
@@ -25,4 +26,6 @@ public interface UserMapper extends BaseMapper<User> {
 
     // 自定义分页
     IPage<User> selectUserPage(Page<User> page,@Param(Constants.WRAPPER) Wrapper<User> wrapper);
+
+    DuoBiaoVo selectBoss(@Param(Constants.WRAPPER) Wrapper<User> ew);
 }

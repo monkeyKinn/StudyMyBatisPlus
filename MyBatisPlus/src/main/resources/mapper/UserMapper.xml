@@ -14,4 +14,18 @@
     select *
     from user ${ew.customSqlSegment}
   </select>
+
+  <select id="selectBoss" resultType="com.jsc.mybatisplus.entity.DuoBiaoVo">
+    select
+    u.id Uid,
+    u.name Uname,
+    u.age Uage,
+    u.email Uemail,
+    u.manager_id UmId,
+    u.create_time Uct,
+    uh.name
+    from user u inner join user_high uh
+            on u.manager_id = uh.id
+    ${ew.customSqlSegment}
+  </select>
 </mapper>
